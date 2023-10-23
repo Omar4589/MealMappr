@@ -136,9 +136,25 @@ The following technologies were used to develop Meal Mappr:<br>
 
 https://mealmappr.herokuapp.com
 
-<img width="1512" alt="Screenshot 2023-05-10 at 5 33 41 PM" src="https://github.com/Rolyat512/MealMappr/assets/122414452/1844c1dd-eaac-4984-aed0-e966bb31493e">
-
 <br>
+
+## Screenshots <a id="screenshots"></a>
+
+<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091893/mealmapprScreenshots/hgyu9kpylpqrgftxrpja.png" alt="Launch Screen" width="150" hspace="50" />
+<img src="
+https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/gqy8mfv6ecswtwczcokc.png
+" alt="Launch Screen" width="150" hspace="50" />
+<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/s4lxo6hyeece6kdxrfx8.png" alt="Launch Screen" width="150" hspace="50" />
+<img src="
+https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/nkfykznhbxv1dxjcpdjh.png
+" alt="Launch Screen" width="150" hspace="50" />
+<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/gjdwmisf7mqp7lodiolq.png" alt="Launch Screen" width="150" hspace="50" />
+<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/kpp3lby6prglzpxljb99.png" alt="Launch Screen" width="150" hspace="50" />
+<img src="
+https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/bmrqzagzpliql8hasswz.png
+" alt="Launch Screen" width="150" hspace="50" />
+<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/sl3je2qo2e3ks90zhete.png" alt="Launch Screen" width="150" hspace="50" />
+
 
 ## Questions <a id="questions"></a>
 
