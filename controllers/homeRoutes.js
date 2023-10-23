@@ -48,17 +48,6 @@ router.get("/home", withAuth, async (req, res) => {
   }
 });
 
-
-router.get("/settings", withAuth, async (req, res) => {
-  try {
-    //res.json({message: 'This will be the home page after user is logged in'} )
-    res.render("settings", { loggedIn: true }); //this will be for redner the home handlebars layout
-  } catch (err) {
-    res.status(400).json({ message: "No homepage found" });
-    console.log(err);
-  }
-});
-
 router.get("/about", async (req, res) => {
   try {
     if (req.session.loggedIn) {
@@ -95,26 +84,6 @@ router.get("/faq", async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: "No homepage found" });
     console.log(err);
-  }
-});
-
-router.get("/myrecipes", withAuth, async (req, res) => {
-  try {
-    const recipeData = await Recipe.findAll({
-      where: {
-        user_id: req.session.userId,
-      },
-    });
-
-    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-
-    res.render("recipes", {
-      recipes,
-      loggedIn: true,
-    });
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Server Error");
   }
 });
 

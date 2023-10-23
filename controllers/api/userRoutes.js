@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Meal } = require("../../models");
+const { User, Meal, Recipe } = require("../../models");
 const bcrypt = require("bcrypt");
 const withAuth = require("../../utils/auth");
 
@@ -102,6 +102,26 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.get("/myrecipes", withAuth, async (req, res) => {
+  try {
+    const recipeData = await Recipe.findAll({
+      where: {
+        user_id: req.session.userId,
+      },
+    });
+
+    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+
+    res.render("recipes", {
+      recipes,
+      loggedIn: true,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server Error");
+  }
+});
+
 router.get("/settings", withAuth, async (req, res) => {
   try {
     const user = await User.findOne({
@@ -114,6 +134,7 @@ router.get("/settings", withAuth, async (req, res) => {
       user,
     });
   } catch (err) {
+    console.log("Entered catch block");
     res.status(400).json({ message: "No page found" });
     console.log(err);
   }
@@ -121,15 +142,19 @@ router.get("/settings", withAuth, async (req, res) => {
 
 router.put("/settings", withAuth, async (req, res) => {
   try {
-    const updateUser = await User.update(
-      {
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        // id: req.session.user_id
-      },
-      { where: { id: req.session.userId }, individualHooks: true }
-    );
+    const requestInfo = {
+      name: req.body.name,
+      email: req.body.email,
+    };
+
+    if (req.body.password) {
+      requestInfo.password = req.body.password;
+    }
+
+    const updateUser = await User.update(requestInfo, {
+      where: { id: req.session.userId },
+      individualHooks: true,
+    });
     if (!updateUser) {
       res.status(404).json({ message: "No user found" });
       return;
@@ -150,7 +175,16 @@ router.delete("/settings", withAuth, async (req, res) => {
       res.status(404).json({ message: "No user with this ID found" });
       return;
     }
-    res.status(200).json({ message: "Account  has been deleted" });
+    // Destroy the session
+    req.session.destroy((err) => {
+      if (err) {
+        res
+          .status(500)
+          .json({ message: "Could not log out, please try again" });
+      } else {
+        res.status(204).end();
+      }
+    });
   } catch (err) {
     res.status(500).json({ message: "An error has occured" });
     console.log(err);

@@ -1,13 +1,13 @@
-  <button
-          type="submit"
-          id="deleteUser"
-          class="bg-red-500 text-white font-semibold px-2 py-1 rounded-lg hover:bg-red-700"
-          style=" margin-right:1%; float:right"
-        >Delete Account
-  </button>
+<button
+  type="submit"
+  id="deleteUser"
+  class="bg-red-500 text-white font-semibold px-2 py-1 rounded-lg hover:bg-red-700"
+  style=" margin-right:1%; float:right"
+>Delete Account
+</button>
 <div class="w-full max-w-md mx-auto mt-10 px-4">
   <h2 class="text-2xl font-semibold text-center mb-6">User Settings</h2>
-  
+
   <form id="settings-form" class="bg-white rounded-lg p-8">
 
     <div class="mb-6">
@@ -17,7 +17,7 @@
         name="name"
         id="name"
         class="w-full border border-gray-300 rounded-lg mt-2 p-2"
-        value=""
+        value={{user.name}}
         required
       />
     </div>
@@ -29,7 +29,7 @@
         name="email"
         id="email"
         class="w-full border border-gray-300 rounded-lg mt-2 p-2"
-        value=""
+        value={{user.email}}
         required
       />
     </div>
@@ -42,12 +42,13 @@
         id="password"
         class="w-full border border-gray-300 rounded-lg mt-2 p-2"
         value=""
-        required
+        placeholder="Leave blank to keep current password"
+        
       />
     </div>
 
     <div class="mb-6">
-      {{!-- <label for="theme" class="block text-gray-700">Theme</label>
+      {{! <label for="theme" class="block text-gray-700">Theme</label>
       <select
         name="theme"
         id="theme"
@@ -56,7 +57,7 @@
       >
         <option value="light">Light</option>
         <option value="dark">Dark</option>
-      </select> --}}
+      </select> }}
       <div class="flex justify-between mt-2">
         <button
           type="submit"
