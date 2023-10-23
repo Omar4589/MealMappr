@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Meal } = require("../../models");
+const { User, Meal, Recipe } = require("../../models");
 const bcrypt = require("bcrypt");
 const withAuth = require("../../utils/auth");
 
@@ -102,6 +102,26 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.get("/myrecipes", withAuth, async (req, res) => {
+  try {
+    const recipeData = await Recipe.findAll({
+      where: {
+        user_id: req.session.userId,
+      },
+    });
+
+    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+
+    res.render("recipes", {
+      recipes,
+      loggedIn: true,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server Error");
+  }
+});
+
 router.get("/settings", withAuth, async (req, res) => {
   try {
     const user = await User.findOne({
@@ -114,6 +134,7 @@ router.get("/settings", withAuth, async (req, res) => {
       user,
     });
   } catch (err) {
+    console.log("Entered catch block");
     res.status(400).json({ message: "No page found" });
     console.log(err);
   }

@@ -1,4 +1,5 @@
 const updateUser = $('#settings-form');
+
   updateUser.on('submit', async function(event) {
     event.preventDefault();
 
@@ -16,7 +17,6 @@ const updateUser = $('#settings-form');
         },
         body: JSON.stringify(updateData)
       });  
-      // If the meal was successfully updated, the new meal is updated on the event and the modal is closed and sent back to /home
       if (response.ok) {
         console.log(updateData);
         alert("Your information has been successfully updated!")
@@ -32,6 +32,7 @@ const updateUser = $('#settings-form');
   });
 
   const deleteUser = $('#deleteUser');
+
   deleteUser.on('click', async () => {
     const response = await fetch('/users/settings', {
       method: 'DELETE',
