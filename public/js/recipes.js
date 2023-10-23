@@ -11,7 +11,7 @@ const call3rdPtyApi = async (query) => {
     options
   );
   const data = await response.json();
-  console.log(data.hits);
+
   return data.hits;
 };
 
@@ -52,7 +52,9 @@ const searchRecipes = async (event) => {
         const recipeDiv = $("<div>").addClass(
           "cursor-pointer p-5 bg-blue-500 flex justify-center items-center hover:bg-blue-700 text-white rounded shadow-md"
         );
-        const labelDiv = $("<div>").html(recipe.recipe.label).addClass("mr-4 text-sm xl:text-lg");
+        const labelDiv = $("<div>")
+          .html(recipe.recipe.label)
+          .addClass("mr-4 text-sm xl:text-lg");
         const image = $("<img>")
           .attr({
             src: recipe.recipe.image,
@@ -92,8 +94,6 @@ $("#save-recipe").on("click", async () => {
       //user_id: userId,
     };
 
-    console.log(newRecipe);
-
     //TODO:validate recipe data
 
     //send post request with recipe data
@@ -107,8 +107,7 @@ $("#save-recipe").on("click", async () => {
     // If the meal was successfully added, the new event is added to the calendar and the modal is closed
     if (response.ok) {
       const savedRecipe = await response.json();
-      console.log(savedRecipe);
-      console.log("Youre recipe was SAVED!");
+
       $("#recipe-modal").addClass("hidden");
       window.location.reload();
     } else {

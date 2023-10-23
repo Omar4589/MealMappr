@@ -11,7 +11,8 @@ $(document).ready(function () {
     events: async (info, successCallback, failureCallback) => {
       try {
         //fetch meals from server and format it to a FullCalendar event format
-        const response = await fetch("/users/meals", { // this is getting *all* meals but the /home route now gets meals specifically for the logged in user
+        const response = await fetch("/users/meals", {
+          // this is getting *all* meals but the /home route now gets meals specifically for the logged in user
           method: "GET",
         });
         if (response.status === 200) {
@@ -35,7 +36,6 @@ $(document).ready(function () {
       info.jsEvent.preventDefault();
 
       const mealID = info.event._def.publicId; // grabs meal ID as 'publicId' from info.event._def given above in id: meal.id
-      console.log(mealID);
 
       // route to the modal
       const response = await fetch(`/users/meals/${mealID}`, {
@@ -66,7 +66,8 @@ $(document).ready(function () {
   });
   calendar.render();
 
-  document.querySelector('style').textContent += "@media screen and (max-width:767px) { .fc-toolbar.fc-header-toolbar {flex-direction:column;} .fc-toolbar-chunk { display: table-row; text-align:center; padding:5px 0; } }";
+  document.querySelector("style").textContent +=
+    "@media screen and (max-width:767px) { .fc-toolbar.fc-header-toolbar {flex-direction:column;} .fc-toolbar-chunk { display: table-row; text-align:center; padding:5px 0; } }";
 
   // This code block sets up the behavior of the modal when it is closed
   const myModal = $("#myModal");
@@ -146,10 +147,9 @@ $(document).ready(function () {
       });
       // If the meal was successfully updated, the new meal is updated on the event and the modal is closed and sent back to /home
       if (response.ok) {
-        console.log(reviewData);
         alert("Your meal has been successfully updated!");
         const reviewEvent = await response.json();
-        console.log(reviewEvent);
+
         document.location.replace("/home");
       } else {
         alert("Error. Failed to update meal.");
@@ -162,7 +162,6 @@ $(document).ready(function () {
   const deleteMeal = async (event) => {
     event.preventDefault();
     const deleteId = document.querySelector('input[name="reviewDate"]').value; // brackets drill down into input attributes
-    console.log(deleteId);
 
     const response = await fetch(`/users/meals/${deleteId}`, {
       method: "DELETE",
