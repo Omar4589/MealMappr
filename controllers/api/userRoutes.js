@@ -175,7 +175,16 @@ router.delete("/settings", withAuth, async (req, res) => {
       res.status(404).json({ message: "No user with this ID found" });
       return;
     }
-    res.status(200).json({ message: "Account  has been deleted" });
+    // Destroy the session
+    req.session.destroy((err) => {
+      if (err) {
+        res
+          .status(500)
+          .json({ message: "Could not log out, please try again" });
+      } else {
+        res.status(204).end();
+      }
+    });
   } catch (err) {
     res.status(500).json({ message: "An error has occured" });
     console.log(err);
