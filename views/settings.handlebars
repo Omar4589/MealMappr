@@ -17,7 +17,7 @@
         name="name"
         id="name"
         class="w-full border border-gray-300 rounded-lg mt-2 p-2"
-        value={{user.user}}
+        value={{user.name}}
         required
       />
     </div>
@@ -29,7 +29,7 @@
         name="email"
         id="email"
         class="w-full border border-gray-300 rounded-lg mt-2 p-2"
-        value=""
+        value={{user.email}}
         required
       />
     </div>
@@ -42,7 +42,8 @@
         id="password"
         class="w-full border border-gray-300 rounded-lg mt-2 p-2"
         value=""
-        required
+        placeholder="Leave blank to keep current password"
+        
       />
     </div>
 

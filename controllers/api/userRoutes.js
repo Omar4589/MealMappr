@@ -142,15 +142,19 @@ router.get("/settings", withAuth, async (req, res) => {
 
 router.put("/settings", withAuth, async (req, res) => {
   try {
-    const updateUser = await User.update(
-      {
-        name: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        // id: req.session.user_id
-      },
-      { where: { id: req.session.userId }, individualHooks: true }
-    );
+    const requestInfo = {
+      name: req.body.name,
+      email: req.body.email,
+    };
+
+    if (req.body.password) {
+      requestInfo.password = req.body.password;
+    }
+
+    const updateUser = await User.update(requestInfo, {
+      where: { id: req.session.userId },
+      individualHooks: true,
+    });
     if (!updateUser) {
       res.status(404).json({ message: "No user found" });
       return;
