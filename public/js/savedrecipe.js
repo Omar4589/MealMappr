@@ -12,8 +12,7 @@ if (number) {
         method: "DELETE",
       });
       if (response.ok) {
-        console.log("Recipe deleted successfully");
-        // Optional: const data = await response.json();
+        window.location.assign("/myrecipes");
       } else {
         console.log("Failed to delete recipe");
       }
@@ -28,5 +27,5 @@ if (number) {
     deleteRecipe(number); // Pass the 'number' to 'deleteRecipe'
   });
 } else {
-  console.log("Recipe number not found in URL");
+  console.log("Recipe number not found");
 }
