@@ -11,6 +11,7 @@ A digital meal planning application designed to simplify nutrition tracking. Off
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Demo](#Demo)
+- [Screenshots](#screenshots)
 - [Questions](#questions)
 - [Collaborators](#collaborators)
 
@@ -140,21 +141,7 @@ https://mealmappr.herokuapp.com
 
 ## Screenshots <a id="screenshots"></a>
 
-<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091893/mealmapprScreenshots/hgyu9kpylpqrgftxrpja.png" alt="Launch Screen" width="150" hspace="50" />
-<img src="
-https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/gqy8mfv6ecswtwczcokc.png
-" alt="Launch Screen" width="150" hspace="50" />
-<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/s4lxo6hyeece6kdxrfx8.png" alt="Launch Screen" width="150" hspace="50" />
-<img src="
-https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/nkfykznhbxv1dxjcpdjh.png
-" alt="Launch Screen" width="150" hspace="50" />
-<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/gjdwmisf7mqp7lodiolq.png" alt="Launch Screen" width="150" hspace="50" />
-<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/kpp3lby6prglzpxljb99.png" alt="Launch Screen" width="150" hspace="50" />
-<img src="
-https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/bmrqzagzpliql8hasswz.png
-" alt="Launch Screen" width="150" hspace="50" />
-<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/sl3je2qo2e3ks90zhete.png" alt="Launch Screen" width="150" hspace="50" />
-
+<img src="https://res.cloudinary.com/yardgems/image/upload/v1698091893/mealmapprScreenshots/hgyu9kpylpqrgftxrpja.png" alt="Welcome Screen" width="150" hspace="50" /> <img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/gqy8mfv6ecswtwczcokc.png" alt="Sign Up Screen" width="150" hspace="50" /> <img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/s4lxo6hyeece6kdxrfx8.png" alt="Login Screen" width="150" hspace="50" /> <img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/nkfykznhbxv1dxjcpdjh.png" alt="Home Screen" width="150" hspace="50" /> <img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/gjdwmisf7mqp7lodiolq.png" alt="Add Meal Screen" width="150" hspace="50" /> <img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/kpp3lby6prglzpxljb99.png" alt="My Recipes Screen" width="150" hspace="50" /> <img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/bmrqzagzpliql8hasswz.png" alt="User Settings Screen" width="150" hspace="50" /> <img src="https://res.cloudinary.com/yardgems/image/upload/v1698091892/mealmapprScreenshots/sl3je2qo2e3ks90zhete.png" alt="Contact Us Screen" width="150" hspace="50" />
 
 ## Questions <a id="questions"></a>
 
